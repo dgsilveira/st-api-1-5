@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M2.Cadastro.API", "M2.Cadas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3.Cadastro.API", "M3.Cadastro.API\M3.Cadastro.API.csproj", "{D3CAAE3E-B4BF-4298-925A-672DB0BAB89F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M4.Cadastro.API", "M4.Cadastro.API\M4.Cadastro.API.csproj", "{8B5E883A-3C04-4C4B-90E6-4AB50E7F5BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D3CAAE3E-B4BF-4298-925A-672DB0BAB89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3CAAE3E-B4BF-4298-925A-672DB0BAB89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3CAAE3E-B4BF-4298-925A-672DB0BAB89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5E883A-3C04-4C4B-90E6-4AB50E7F5BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5E883A-3C04-4C4B-90E6-4AB50E7F5BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5E883A-3C04-4C4B-90E6-4AB50E7F5BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5E883A-3C04-4C4B-90E6-4AB50E7F5BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
