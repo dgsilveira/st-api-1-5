@@ -1,17 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 
-namespace M1.Cadastro.API.Controllers
+namespace M3.Cadastro.API
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PessoaController : ControllerBase
+    public class PessoaRepository
     {
         private string connectionString = "Data Source=DELL_DOUG;Initial Catalog=EstudyDB;User ID=sa;Password=sa1234;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
-        [HttpGet]
-        public IActionResult Get()
+        public IEnumerable<Pessoa> ListarPessoas()
         {
             using var conexao = new SqlConnection(connectionString);
             conexao.Open();
@@ -44,12 +39,10 @@ namespace M1.Cadastro.API.Controllers
                 });
             }
 
-            return Ok(pessoas);
+            return pessoas;
         }
 
-        [HttpGet]
-        [Route("getId")]
-        public IActionResult GetId(int id)
+        public Pessoa BuscarPorId(int id)
         {
             using var conexao = new SqlConnection(connectionString);
             conexao.Open();
@@ -81,11 +74,10 @@ namespace M1.Cadastro.API.Controllers
                 Nome = nome
             };
 
-            return Ok(pessoa);
+            return pessoa;
         }
 
-        [HttpPost]
-        public IActionResult Post(PessoaInsert pessoa)
+        public void Inserir(PessoaInsert pessoa)
         {
             using var conexao = new SqlConnection(connectionString);
 
@@ -116,12 +108,9 @@ namespace M1.Cadastro.API.Controllers
             command.Parameters.AddWithValue("@ativo", true);
 
             command.ExecuteNonQuery();
-
-            return NoContent();
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
             using var conexao = new SqlConnection(connectionString);
             conexao.Open();
@@ -133,12 +122,9 @@ namespace M1.Cadastro.API.Controllers
             command.Parameters.AddWithValue("@id", id);
 
             command.ExecuteNonQuery();
-
-            return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult Put(int id, PessoaUpdate pessoa)
+        public void Atualizar(int id, PessoaUpdate pessoa)
         {
             using var conexao = new SqlConnection(connectionString);
             conexao.Open();
@@ -181,8 +167,6 @@ namespace M1.Cadastro.API.Controllers
             command.Parameters.AddWithValue("@id", id);
 
             command.ExecuteNonQuery();
-
-            return NoContent();
         }
     }
 }
